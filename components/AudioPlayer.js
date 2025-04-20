@@ -23,7 +23,6 @@ function AudioPlayer({ text }) {
   function playTextToSpeech() {
     if (voice) {
       const utterance = new SpeechSynthesisUtterance(text);
-      // 사용 가능한 음성 중, 랜덤 발음 선택
       const voicesList = speechSynthesis.getVoices();
       utterance.voice = voicesList.find(v => v.lang === voice.language && v.name === voice.name);
       speechSynthesis.speak(utterance);
